@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "ca.tetervak.githubreposapp"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ca.tetervak.githubreposapp"
-        minSdk = 31
-        targetSdk = 35
+        minSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -62,6 +62,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    implementation(libs.androidx.compose.material.icons.core)
+    implementation(libs.androidx.compose.material.icons.extended)
 
     implementation(libs.hilt.lifecycle.viewmodel.compose)
     implementation(libs.hilt.android)
