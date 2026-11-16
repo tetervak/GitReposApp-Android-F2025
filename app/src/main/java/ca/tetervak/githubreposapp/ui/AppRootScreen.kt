@@ -41,9 +41,12 @@ fun AppRootScreen() {
 
         topBar = {
             CenterAlignedTopAppBar(
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    scrolledContainerColor =MaterialTheme.colorScheme.primaryContainer,
+                    navigationIconContentColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.primary,
+                    actionIconContentColor = MaterialTheme.colorScheme.primary
                 ),
                 title = {
                     Text(
