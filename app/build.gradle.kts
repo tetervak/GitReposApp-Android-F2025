@@ -1,9 +1,6 @@
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.google.ksp)
-    alias(libs.plugins.google.hilt)
 }
 
 android {
@@ -52,16 +49,14 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.core)
     implementation(libs.androidx.compose.material.icons.extended)
 
-    implementation(libs.hilt.lifecycle.viewmodel.compose)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.converter.gson)
 
     implementation(libs.androidx.paging.compose)
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

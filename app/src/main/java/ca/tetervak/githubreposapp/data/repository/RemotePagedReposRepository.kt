@@ -5,11 +5,8 @@ import androidx.paging.PagingConfig
 import ca.tetervak.githubreposapp.data.remote.Repo
 import ca.tetervak.githubreposapp.data.remote.ReposApi
 import ca.tetervak.githubreposapp.data.remote.ReposPagingSource
-import javax.inject.Inject
-import javax.inject.Singleton
 
-@Singleton
-class RemotePagedReposRepository @Inject constructor(
+class RemotePagedReposRepository(
     private val reposApi: ReposApi
 ) : PagedReposRepository {
 

@@ -17,19 +17,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import ca.tetervak.githubreposapp.R
-
-import ca.tetervak.githubreposapp.ui.repos.ReposViewModel
-import ca.tetervak.githubreposapp.ui.repos.ReposScreen
 import ca.tetervak.githubreposapp.data.remote.Repo
+import ca.tetervak.githubreposapp.ui.repos.ReposScreen
+import ca.tetervak.githubreposapp.ui.repos.ReposViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppRootScreen() {
-    val viewModel: ReposViewModel = viewModel()
+fun AppRootScreen(
+    viewModel: ReposViewModel = koinViewModel()
+) {
     val reposFlow = viewModel.repos
     val lazyRepoItems: LazyPagingItems<Repo> =
         reposFlow.collectAsLazyPagingItems()
@@ -43,7 +43,7 @@ fun AppRootScreen() {
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    scrolledContainerColor =MaterialTheme.colorScheme.primaryContainer,
+                    scrolledContainerColor = MaterialTheme.colorScheme.primaryContainer,
                     navigationIconContentColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.primary,
                     actionIconContentColor = MaterialTheme.colorScheme.primary
@@ -75,5 +75,4 @@ fun AppRootScreen() {
 
         ReposScreen(lazyRepoItems, Modifier.padding(innerPadding))
     }
-
 }

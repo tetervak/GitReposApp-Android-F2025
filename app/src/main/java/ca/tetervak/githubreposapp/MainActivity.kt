@@ -5,9 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import ca.tetervak.githubreposapp.ui.AppRootScreen
 import ca.tetervak.githubreposapp.ui.theme.AppTheme
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,4 +17,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
